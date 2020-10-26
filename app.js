@@ -23,7 +23,15 @@ const tables = [
         pax: ""
       }
 ];
-const waitlist = [];
+const waitlist = [
+    {
+        id: "",
+        name: "",
+        email: "",
+        phone: "",
+        pax: ""
+      }
+];
 
 // HTML
 app.get('/')
@@ -42,16 +50,16 @@ app.use(express.json());
 
 
   // Basic route that sends the user first to the AJAX Page
-  app.get("/", function(req, res) {
-    res.sendFile(path.join("/reservations", "/home.html"));
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./reservations/home.html"));
   });
 
   app.get("/reservations/new", function(req, res) {
-    res.sendFile(path.join("/reservations", "/new.html"));
+    res.sendFile(path.join(__dirname, "./reservations/new.html"));
   });
 
   app.get("/reservations/view", function(req, res) {
-    res.sendFile(path.join("/reservations", "/view.html"));
+    res.sendFile(path.join(__dirname, "./reservations/view.html"));
   });
 
 
