@@ -50,7 +50,7 @@ app.use(express.json());
 
 
   // Basic route that sends the user first to the AJAX Page
-  app.get("*", function(req, res) {
+  app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "./reservations/home.html"));
   });
 
@@ -60,6 +60,10 @@ app.use(express.json());
 
   app.get("/reservations/view", function(req, res) {
     res.sendFile(path.join(__dirname, "./reservations/view.html"));
+  });
+
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "./reservations/home.html"));
   });
 
 
