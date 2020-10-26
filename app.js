@@ -16,7 +16,6 @@ var PORT = process.env.PORT || 3001;
 
 const tables = [
     {
-        id: "",
         name: "",
         email: "",
         phone: "",
@@ -25,7 +24,6 @@ const tables = [
 ];
 const waitlist = [
     {
-        id: "",
         name: "",
         email: "",
         phone: "",
@@ -68,6 +66,17 @@ app.use(express.json());
 
 
 
+  app.post("/reservations/new", function(req, res) {
+    let newCustomer = req.body;
+    tables.push(newCustomer);
+    res.json(newCustomer);
+    console.log(newCustomer);
+  }
+
+
+  )
+
+//   Listen
   app.listen(PORT, function() {
       console.log("Listening on " + PORT);
   })
