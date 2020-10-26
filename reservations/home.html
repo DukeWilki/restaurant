@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Deep-Fried-Mars-Bar Emporium</title>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="jumbotron">
+        <h1 class="display-4">Hot Restaurant</h1>
+        <hr class="my-4">
+        <p class="lead">We onnly have 5 tables! Book your seat before they all are gone!</p>
+        <button class="tables button"><a href="/reservations/view">View Tables</a></button>
+        <button class="reserve button"><a href="/reservations/new">Book Tables</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    $.get('/api/reservations/all')
+    $.get('/api/waitlist/all')
+    $.post('/api/reservations/create')
+  </script>
+  
+</body>
+</html>
+
+
